@@ -2,7 +2,7 @@ pipeline {
     agent { label 'Jenkins-Agent' }
     tools {
         jdk 'jdk17'
-        maven 'Maven3'
+        maven 'maven3'
     }
     environment {
 	    APP_NAME = "register-app-pipeline"
@@ -22,7 +22,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/Ashfaque-9x/register-app'
+                    git branch: 'main', credentialsId: 'git-cred', url: 'git@github.com:PRATHAMPRAJU/register-app.git'
                 }
         }
 
